@@ -1,0 +1,638 @@
+:root {
+    --main-gray: #D9D9D9;
+    --background-gray: rgba(219, 219, 219, 0.15);
+    --border-gray: #D7D7D7;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Poppins, sans-serif;
+}
+
+.menu {
+    height: 50px;
+    width: 100%;
+    background-color: #E9E9E9;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+.menu .link {
+    margin-right: 20px;
+    padding: 5px;
+    font-size: 0.9rem;
+}
+
+.menu .link:last-child {
+    margin-right: 0;
+}
+
+.menu .link-active {
+    border-bottom: 2px solid black;
+}
+
+main {
+    padding: 50px 25px;
+}
+
+.main-header {
+    display: none;
+    border-radius: 10px 10px 0 0;
+}
+
+.section-title {
+    background-color: var(--main-gray);
+    padding: 8px 10px;
+    font-size: 1.2rem;
+}
+
+.section-content {
+    border: 2px solid var(--border-gray);
+    border-radius: 0 0 10px 10px;
+}
+
+.category {
+    padding: 10px;
+    background-color: var(--background-gray);
+    margin-bottom: 5px;
+    display: flex;
+    align-items: center;
+}
+
+.category:last-child {
+    margin-bottom: 0;
+}
+
+.category-title-column {
+    display: flex;
+    flex-direction: column;
+}
+
+.category-title {
+    margin-bottom: 8px;
+}
+
+.category-title > a {
+    font-size: 1.2rem;
+    border-bottom: 2px solid black;
+    font-weight: 600;
+}
+
+.category-description > span {
+    font-size: 0.9rem;
+}
+
+.category-threads-column {
+    display: none;
+}
+
+.category-posts-column {
+    display: none;
+}
+
+.category-last-message-column {
+    display: none;
+}
+
+@media screen and (min-width: 1200px) {
+    .main-header {
+        display: flex;
+        padding: 10px;
+    }
+    .main-header > div {
+        font-size: 1.1rem;
+        font-weight: 600;
+    }
+    .section-title {
+        padding-left: 30px;
+    }
+    .category-title-column {
+        flex: 5;
+    }
+    .category-threads-column {
+        display: flex;
+        flex: 1;
+        justify-content: center;
+    }
+    .category-posts-column {
+        display: flex;
+        flex: 1;
+        justify-content: center;
+    }
+    .category-last-message-column {
+        display: flex;
+        flex: 2;
+        flex-direction: column;
+    }
+    .category-last-message-column > .post-title {
+        font-weight: 600;
+        margin-bottom: 2px;
+    }
+    .category-last-message-column > .post-author {
+        font-style: italic;
+        margin-bottom: 2px;
+    }
+    main {
+        padding: 100px 200px;
+    }
+    .main-header {
+        display: flex;
+        align-items: center;
+        background-color: var(--main-gray);
+    }
+    .menu {
+        height: 60px;
+    }
+    .menu .link {
+        font-size: 1.2rem;
+    }
+}
+
+.thread {
+    padding: 10px;
+    background-color: var(--background-gray);
+    margin-bottom: 5px;
+    display: flex;
+    align-items: center;
+}
+
+.thread:last-child {
+    margin-bottom: 0;
+}
+
+.thread-title-column {
+    display: flex;
+    flex-direction: column;
+}
+
+.thread-title {
+    margin-bottom: 2px;
+}
+
+.thread-title > a {
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.thread-author > span {
+    font-size: 0.9rem;
+    font-style: italic;
+}
+
+.thread-threads-column {
+    display: none;
+}
+
+.thread-posts-column {
+    display: none;
+}
+
+.thread-last-message-column {
+    display: none;
+}
+
+@media screen and (min-width: 1200px) {
+    .thread-title-column {
+        flex: 5;
+    }
+    .thread-posts-column {
+        display: flex;
+        flex: 1;
+        justify-content: center;
+    }
+    .thread-last-message-column {
+        display: flex;
+        flex: 2;
+        flex-direction: column;
+    }
+    .thread-last-message-column > .post-title {
+        font-weight: 600;
+        margin-bottom: 2px;
+    }
+    .thread-last-message-column > .post-author {
+        font-style: italic;
+        margin-bottom: 2px;
+    }
+}
+
+
+.post {
+    padding: 10px;
+    background-color: var(--background-gray);
+    margin-bottom: 5px;
+    display: flex;
+    flex-direction: column;
+}
+
+.post:last-child {
+    margin-bottom: 0;
+}
+
+.post-info {
+    display: flex;
+}
+
+.post-content {
+    margin: 10px 0;
+}
+
+.author-image {
+    margin-right: 10px;
+}
+
+.post-user {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.post-author {
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.post-content {
+    font-size: 0.9rem;
+}
+
+.post-timestamp-desktop {
+    display: none;
+}
+
+.post-role {
+    display: none;
+}
+
+@media screen and (min-width: 1200px) {
+    .post {
+        flex-direction: row;
+    }
+    .post-info {
+        flex-direction: column;
+        margin-right: 20px;
+        padding: 10px;
+    }
+    .post-timestamp {
+        display: none;
+    }
+    .post-user {
+        align-items: center;
+    }
+    .author-image {
+        margin-right: 0;
+    }
+    .author-image > img {
+        width: 80px;
+    }
+    .post-content {
+        font-size: 1rem;
+    }
+    .post-timestamp-desktop {
+        display: block;
+        margin-bottom: 30px;
+        font-weight: 600;
+    }
+    .post-role {
+        display: block;
+        margin-bottom: 10px;
+        font-size: 0.9rem;
+    }
+}
+
+.user {
+    padding: 10px;
+    background-color: var(--background-gray);
+    margin-bottom: 5px;
+    display: flex;
+    flex-direction: column;
+}
+
+.user-column {
+    display: flex;
+    flex: 4;
+}
+
+.user-column > img {
+    margin-right: 10px;
+}
+
+.user-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.user-name {
+    font-weight: 600;
+    margin-bottom: 5px;
+    font-size: 1.1rem;
+}
+
+.created-column {
+    display: none;
+}
+.thread-count-column {
+    display: none;
+}
+.post-count-column {
+    display: none;
+}
+.last-online-column {
+    display: none;
+}
+.country-column {
+    display: none;
+}
+
+.search {
+    margin-bottom: 10px;
+}
+
+.user:last-child {
+    margin-bottom: 0;
+}
+
+@media screen and (min-width: 1200px) {
+    .user {
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .created-column {
+        display: flex;
+        justify-content: center;
+        flex: 1;
+    }
+    .thread-count-column {
+        display: flex;
+        justify-content: center;
+        flex: 1;
+    }
+    .post-count-column {
+        display: flex;
+        justify-content: center;
+        flex: 1;
+    }
+    .last-online-column {
+        display: flex;
+        justify-content: center;
+        flex: 1;
+    }
+    .country-column {
+        display: flex;
+        justify-content: center;
+        flex: 1;
+    }
+}
+
+.user-profile {
+    padding: 15px;
+}
+
+.user-profile-info {
+    display: flex;
+    margin-bottom: 10px;
+}
+
+.user-profile-img {
+    margin-right: 15px;
+}
+
+.user-profile-activity div {
+    margin-bottom: 5px;
+}
+
+.user-profile-bio {
+    margin: 15px 0;
+}
+
+.user-profile-bio-content {
+    border: 2px solid var(--border-gray);
+    border-radius: 5px;
+    min-height: 100px;
+    padding: 10px;
+}
+
+.user-profile-threads-content {
+    border: 2px solid var(--border-gray);
+    border-radius: 5px;
+}
+
+.user-profile-thread {
+    padding: 10px;
+    background-color: var(--background-gray);
+    margin-bottom: 5px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.user-profile-thread:last-child {
+    margin-bottom: 0;
+}
+
+.thread-last-message {
+    margin-top: 5px;
+}
+
+@media screen and (min-width: 1200px) {
+    .user-profile-info-container {
+        display: flex;
+    }
+    .user-profile-info {
+        margin-right: 30px;
+    }
+    .user-profile-bio-thread-container {
+        display: flex;
+    }
+    .user-profile-bio {
+        margin: 0 15px 0 0;
+        min-width: 50%;
+    }
+    .user-profile-threads {
+        min-width: 48%;
+    }
+}
+
+.user-profile-bio-textarea {
+    width: 100%;
+    min-height: 100px;
+}
+
+.user-profile-edit > * {
+    margin-bottom: 10px;
+}
+
+.main-toolbox {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 5px;
+}
+
+.main-toolbox > * {
+    margin-left: 10px;
+}
+
+button, input[type=submit], .button {
+    border: none;
+    background-color: var(--main-gray);
+    cursor: pointer;
+    color: black;
+    padding: 8px 12px;
+}
+
+
+.admin-user-column {
+    flex: 2;
+    display: flex;
+}
+
+.admin-promote-column {
+    flex: 3;
+}
+
+.admin-delete-column {
+    flex: 1;
+}
+
+.admin-user-img {
+    width: 50px;
+    margin-right: 15px;
+}
+
+.admin-promote-column-text {
+    display: none;
+}
+
+select {
+    border: 1px solid var(--border-gray);
+    padding: 5px;
+}
+
+.admin-panel-menu {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.admin-panel-menu-item {
+    margin-right: 20px;
+    border: 2px solid var(--border-gray);
+    padding: 5px 10px;
+}
+
+.admin-panel-menu-item-active {
+    border-color: #008DB9;
+}
+
+
+
+.category-list {
+    padding: 10px 0;
+}
+
+ul {
+    padding-left: 30px;
+    margin-bottom: 30px;
+}
+
+li {
+    display: block;
+    margin-bottom: 20px;
+}
+
+li > span {
+    padding: 5px 10px;
+    border: 2px solid var(--border-gray);
+
+}
+
+.login-form {
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-form > * {
+    margin-bottom: 10px;
+}
+
+label {
+    display: flex;
+    flex-direction: column;
+}
+
+.label {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 5px;
+}
+
+input:not([type=submit]) {
+    border: 2px solid var(--border-gray);
+    border-radius: 5px;
+    min-height: 20px;
+}
+
+.login-form-text {
+    font-size: 1.2rem;
+}
+
+.error {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 5px;
+    color: red;
+}
+
+.new-post {
+    border: 2px solid var(--border-gray);
+    border-radius: 10px;
+    margin: 15px 0;
+    padding: 15px;
+}
+
+.new-post-title {
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.new-thread {
+    padding: 15px;
+}
+
+.new-thread-label {
+    margin-bottom: 5px;
+}
+
+.new-thread-input, .new-thread-textarea {
+    border: 2px solid var(--border-gray);
+}
+
+.new-thread-input {
+    width: 100%;
+}
+
+.new-thread-textarea {
+    width: 100%;
+    height: 200px;
+}
+
+
+@media screen and (min-width: 1200px) {
+    .new-thread-input {
+        width: 50%;
+    }
+    label {
+        display: initial;
+    }
+}
